@@ -1,0 +1,15 @@
+[package]
+name = "forge-geom"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Forge Studio geometry: rectangles, units and the print-sheet grid maths"
+
+[lints]
+workspace = true
+
+[dependencies]
+serde = { workspace = true }
+
+[dev-dependencies]
+proptest = { workspace = true }

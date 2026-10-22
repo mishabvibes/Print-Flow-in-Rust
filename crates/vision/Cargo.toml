@@ -1,0 +1,16 @@
+[package]
+name = "forge-vision"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Forge Studio vision: pure-Rust face detection (BlazeFace TFLite interpreter + SeetaFace fallback) and backdrop replacement"
+
+[lints]
+workspace = true
+
+[dependencies]
+forge-geom = { workspace = true }
+forge-doc = { workspace = true }
+forge-image = { workspace = true }
+rustface = { workspace = true }
+log = { workspace = true }

@@ -1,0 +1,24 @@
+[package]
+name = "forge-render"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Forge Studio renderer: cards and print sheets rasterised on the CPU with vello_cpu"
+
+[lints]
+workspace = true
+
+[dependencies]
+forge-geom = { workspace = true }
+forge-color = { workspace = true }
+forge-image = { workspace = true }
+forge-doc = { workspace = true }
+forge-text = { workspace = true }
+vello_cpu = { workspace = true }
+kurbo = { workspace = true }
+rayon = { workspace = true }
+log = { workspace = true }
+thiserror = { workspace = true }
+
+[dev-dependencies]
+forge-vision = { workspace = true }

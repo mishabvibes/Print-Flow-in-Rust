@@ -1,0 +1,25 @@
+[package]
+name = "forge-engine"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Forge Studio engine: the command layer, undo history, journal and panic guard over the document model"
+
+[lints]
+workspace = true
+
+[dependencies]
+forge-geom = { workspace = true }
+forge-image = { workspace = true }
+forge-doc = { workspace = true }
+forge-data = { workspace = true }
+forge-text = { workspace = true }
+forge-vision = { workspace = true }
+forge-render = { workspace = true }
+forge-export = { workspace = true }
+forge-format = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+rayon = { workspace = true }
+log = { workspace = true }
+thiserror = { workspace = true }

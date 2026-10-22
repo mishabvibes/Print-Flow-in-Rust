@@ -1,0 +1,18 @@
+[package]
+name = "forge-text"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Forge Studio text: font catalogue, shaping (harfrust), line layout and glyph outlines"
+
+[lints]
+workspace = true
+
+[dependencies]
+forge-doc = { workspace = true }
+kurbo = { workspace = true }
+skrifa = { workspace = true }
+harfrust = { workspace = true }
+unicode-segmentation = { workspace = true }
+rayon = { workspace = true }
+log = { workspace = true }

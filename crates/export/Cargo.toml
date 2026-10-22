@@ -1,0 +1,24 @@
+[package]
+name = "forge-export"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Forge Studio export: card ZIPs, cropped-photo ZIPs, sheet ZIPs and streaming PDF"
+
+[lints]
+workspace = true
+
+[dependencies]
+forge-geom = { workspace = true }
+forge-color = { workspace = true }
+forge-image = { workspace = true }
+forge-doc = { workspace = true }
+forge-render = { workspace = true }
+zip = { workspace = true }
+flate2 = { workspace = true }
+rayon = { workspace = true }
+log = { workspace = true }
+thiserror = { workspace = true }
+
+[dev-dependencies]
+forge-text = { workspace = true }

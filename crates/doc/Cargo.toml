@@ -1,0 +1,21 @@
+[package]
+name = "forge-doc"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Forge Studio document model: project, design, fields, photos, data table, sheet settings"
+
+[lints]
+workspace = true
+
+[dependencies]
+forge-geom = { workspace = true }
+forge-color = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+base64 = { workspace = true }
+sha2 = { workspace = true }
+
+[dev-dependencies]
+proptest = { workspace = true }

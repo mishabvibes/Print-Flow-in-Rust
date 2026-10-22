@@ -1,0 +1,15 @@
+[package]
+name = "forge-color"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Forge Studio colour type: sRGB with alpha, hex parsing"
+
+[lints]
+workspace = true
+
+[dependencies]
+serde = { workspace = true }
+
+[dev-dependencies]
+serde_json = { workspace = true }

@@ -1,0 +1,22 @@
+[package]
+name = "forge-cli"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish = false
+description = "Forge Studio command line: headless renders, exports, journal replay and benchmarks"
+
+[[bin]]
+name = "forge-cli"
+path = "src/main.rs"
+
+[lints]
+workspace = true
+
+[dependencies]
+forge-engine = { workspace = true }
+forge-vision = { workspace = true }
+forge-export = { workspace = true }
+forge-render = { workspace = true }
+forge-image = { workspace = true }
+serde_json = { workspace = true }

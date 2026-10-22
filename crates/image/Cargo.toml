@@ -1,0 +1,16 @@
+[package]
+name = "forge-image"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Forge Studio raster images: EXIF-aware decode, SIMD resize, PNG/JPEG encode"
+
+[lints]
+workspace = true
+
+[dependencies]
+forge-geom = { workspace = true }
+image = { workspace = true }
+fast_image_resize = { workspace = true }
+jpeg-encoder = { workspace = true }
+thiserror = { workspace = true }

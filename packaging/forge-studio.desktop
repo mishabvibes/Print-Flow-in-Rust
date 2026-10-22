@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Forge Studio
+Comment=Crop photos, merge data into ID cards, print sheets
+Exec=forge-studio %f
+Icon=forge-studio
+Categories=Graphics;Office;
+MimeType=application/x-forgeproject;

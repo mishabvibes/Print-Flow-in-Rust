@@ -1,0 +1,90 @@
+[workspace]
+resolver = "3"
+members = ["crates/*", "apps/*", "xtask"]
+default-members = ["crates/*", "apps/*", "xtask"]
+
+[workspace.package]
+version = "1.0.0"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+rust-version = "1.90"
+repository = "https://github.com/your-org/forge-studio"
+
+[workspace.dependencies]
+# internal
+forge-geom = { path = "crates/geom" }
+forge-color = { path = "crates/color" }
+forge-image = { path = "crates/image" }
+forge-doc = { path = "crates/doc" }
+forge-data = { path = "crates/data" }
+forge-text = { path = "crates/text" }
+forge-vision = { path = "crates/vision" }
+forge-render = { path = "crates/render" }
+forge-export = { path = "crates/export" }
+forge-format = { path = "crates/format" }
+forge-engine = { path = "crates/engine" }
+forge-ui-egui = { path = "crates/ui-egui" }
+
+# foundation
+serde = { version = "1", features = ["derive", "rc"] }
+serde_json = { version = "1", features = ["float_roundtrip"] }
+thiserror = "2"
+log = "0.4"
+env_logger = { version = "0.11", default-features = false, features = ["auto-color", "humantime"] }
+rayon = "1.10"
+proptest = "1"
+
+# imaging / rendering (same CPU rasteriser stack as VectorCraft)
+kurbo = "0.13"
+vello_cpu = "0.2"
+fast_image_resize = "6"
+image = { version = "0.25", default-features = false, features = ["png", "jpeg", "webp", "gif", "tiff", "bmp"] }
+skrifa = "0.47"
+harfrust = "0.13"
+flate2 = { version = "1", default-features = false, features = ["rust_backend"] }
+jpeg-encoder = { version = "0.6", default-features = false, features = ["std"] }
+
+rustface = "0.1"
+
+# data / files
+csv = "1"
+calamine = "0.36"
+encoding_rs = "0.8"
+zip = { version = "8", default-features = false, features = ["deflate"] }
+unicode-segmentation = "1"
+sha2 = "0.10"
+base64 = "0.22"
+dirs = "6"
+
+# ui
+egui = "0.36"
+egui_extras = { version = "0.36", default-features = false }
+eframe = { version = "0.36", default-features = false }
+rfd = "0.17"
+arboard = { version = "3.6", default-features = false }
+
+[workspace.lints.rust]
+unsafe_code = "deny"
+
+[workspace.lints.clippy]
+dbg_macro = "warn"
+# Forge Studio never crashes: shipped code returns `Result`/`Option` instead of panicking
+# (see AGENTS.md > Robustness). Tests may unwrap (clippy.toml).
+unwrap_used = "deny"
+expect_used = "deny"
+panic = "deny"
+todo = "deny"
+unimplemented = "deny"
+unreachable = "deny"
+
+[profile.dev.package."*"]
+opt-level = 2
+
+[profile.dev]
+opt-level = 1
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+panic = "unwind"
+strip = "symbols"
